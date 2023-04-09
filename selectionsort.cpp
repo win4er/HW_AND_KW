@@ -6,34 +6,54 @@ void swap(int& a, int& b){
     b = c;
 }
 
-void SelectionSortUP(int* ar, int size){
-    int min_ind;
+void show_el(int* ar, int size){
     for (int i = 0; i < size; i++){
-        min_ind = i;
-        for (int j = i; j < size; j++){
-            if (ar[j] < ar[min_ind])
-                min_ind = j;
-        }
-        swap(ar[min_ind], ar[i]);
-    }
-    for (int i = 0; i < size; i++) {
         std::cout << ar[i] << " ";
     }
     std::cout << std::endl;
 }
 
-void SelectionSortDOWN(int* ar, int size){
-    int min_ind;
-    for (int i = 0; i < size; i++){
-        min_ind = i;
-        for (int j = i; j < size; j++){
-            if (ar[j] > ar[min_ind])
-                min_ind = j;
-        }
-        swap(ar[min_ind], ar[i]);
-    }
+int getIndMax(int* ar, int size) {
     for (int i = 0; i < size; i++) {
-        std::cout << ar[i] << " ";
+        int flag = 1;
+        for (int j = 0; j < size; j++) {
+            if (ar[j] > ar[i]) {
+                flag = 0;
+                break;
+            }
+        }
+        if (flag == 1) {
+            return i;
+        }
     }
-    std::cout << std::endl;
+}
+
+void selection_sort_down(int* ar, int size) {
+    for (int i = 0; i < size; i++) {
+        swap(ar[i], ar[getIndMax(&ar[i], size-i)+i]);
+    }
+}
+
+void selection_sort_up(int* ar, int size) {
+    for (int i = 0; i < size; i++) {
+        swap(ar[size-i-1], ar[getIndMax(&ar[0], size-i)]);
+    }
+}
+
+bool isSortedUP(int* ar, int size) {
+    for (int i = 0; i < size - 1; i++) {
+        if (ar[i] > ar[i + 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool isSortedDOWN(int* ar, int size) {
+    for (int i = 0; i < size - 1; i++) {
+        if (ar[i] < ar[i + 1]) {
+            return false;
+        }
+    }
+    return true;
 }
