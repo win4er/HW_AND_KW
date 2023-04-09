@@ -1,5 +1,5 @@
-#ifndef _sorts_h_
-#define _sorts_h_
+#ifndef _sorts_hpp_
+#define _sorts_hpp_
 
 #include <cstring>
 #include "array.hpp"
