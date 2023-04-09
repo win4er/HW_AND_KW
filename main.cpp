@@ -1,11 +1,14 @@
-#include "recursive.hpp"
+#include "task_2.hpp"
+#include "arraywork.hpp"
+#include "sorts.hpp"
+#include "testsorts.hpp"
+#include "statarray.hpp"
 
-int main() {
-    int size = 10;
-    int ar[size];
-    random_Fill_ar(&ar[0], size, 0, 100);
-    show_ar(&ar[0], size, '\t');
-    std::cout << get_max(&ar[0], size) << "\n";
-    std::cout << get_min(&ar[0], size) << "\n";
+int main(){
+    test_BubbleSort();
+    test_InsertionSort();
+    test_SelectionSort();
+    test_QuickSort();
+    test_MergeSort();
     return 0;
 }
