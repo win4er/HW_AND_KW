@@ -1,4 +1,4 @@
-#include "sorts.h"
+#include "sorts.hpp"
 #include "array.hpp"
 
 void bubble_sort(int *ar, int size){
@@ -122,4 +122,4 @@ void mergeSort(int* ar, int size) {
 
     merge(ar, size, size >> 1);
 }
-Footer
+

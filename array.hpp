@@ -1,5 +1,5 @@
-#ifndef _array_h_
-#define _array_h_
+#ifndef _array_hpp_
+#define _array_hpp_
 
 
 #include <iostream>
